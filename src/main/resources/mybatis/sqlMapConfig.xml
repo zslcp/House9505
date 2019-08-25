@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--日志输出打印-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--<mappers>
+        <mapper resource="mybatis/mapper/DistrictMapper.xml"></mapper>
+
+        <mapper resource="mybatis/mapper/HouseMapper.xml"></mapper>
+        <mapper resource="mybatis/mapper/StreetMapper.xml"></mapper>
+        <mapper resource="mybatis/mapper/TypeMapper.xml"></mapper>
+        <mapper resource="mybatis/mapper/UsersMapper.xml"></mapper></mappers>-->
+    <!--2.设置别名-->
+    <typeAliases>
+        <!--由于mybatis支持的别名中只有map没有list和set ,单独配置list和set-->
+        <typeAlias type="java.util.List" alias="list"/>
+        <typeAlias type="java.util.Set" alias="set"/>
+        <package name="com.entity"/>
+    </typeAliases>
+
+    <!--添加分页的插件-->
+    <plugins>
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+
+
+</configuration>
+
+
+
+
